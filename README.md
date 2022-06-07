@@ -20,12 +20,13 @@ yarn install
 ### Step 2: Configuration
 
 Your channel can be configured by editing the necessary variables in `server.ts`.
-These values include:
+You obtain the following values when you [request a partner channel](https://dev.frontapp.com/docs/creating-a-partner-channel#requesting-a-partner-channel) from Front:
 * `frontId` - The ID of your channel type given to you during partner channel registration.
 * `frontSecret` - The secret key of your channel type given to you during partner channel registration.
-* `frontUrl` - The Front API URL that your channel will make requests to.
 * `callbackHostname` - The hostname that this channel will use when generating webhooks. If running the server locally,
-we recommend using a tool like `ngrok` to proxy requests to localhost. This variable should be the public URL of your `ngrok` proxy.
+we recommend using a tool like [ngrok](https://ngrok.com/) to proxy requests to localhost. This variable should be the public URL of your `ngrok` proxy.
+
+**Tip:** You can leave the `frontUrl` with the default `https://api2.frontapp.com` value unless you've specifically been given a different subdomain to use by Front.
 
 ### Step 3: Start the development server
 

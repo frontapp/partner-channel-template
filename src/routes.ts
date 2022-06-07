@@ -16,7 +16,7 @@ ChannelRouter.use('/front', verifyFrontRequest);
  * 
  * In this implementation, we respond with /front/${randomString(16)}.
  */
-ChannelRouter.post('/front', async (req: Request, res: Response) => {
+ChannelRouter.post('/', async (req: Request, res: Response) => {
   if (req.body.type !== 'authorization') {
     res.send(400).json({ type: 'bad_request', message: 'Unknown type sent to channel' });
   }
