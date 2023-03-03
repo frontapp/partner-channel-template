@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 
 export const frontId = 'yourFrontId';
 export const frontSecret = 'shhhhhhhhh';
-export const frontUrl = 'https://api2.frontapp.com/';
+export const frontUrl = 'https://api2.frontapp.com';
 export const callbackHostname = 'https://your-ngrok-hostnmae.ngrok.io';
 export const serverPort = '3000';
 
