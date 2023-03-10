@@ -20,9 +20,9 @@ yarn install
 ### Step 2: Configuration
 
 Your channel can be configured by editing the necessary variables in `server.ts`.
-You obtain the following values when you [request a partner channel](https://dev.frontapp.com/docs/creating-a-partner-channel#requesting-a-partner-channel) from Front:
-* `frontId` - The ID of your channel type given to you during partner channel registration.
-* `frontSecret` - The secret key of your channel type given to you during partner channel registration.
+You obtain the following values when you [create a channel type for an app](https://dev.frontapp.com/docs/create-and-manage-apps#create-a-channel-type) and then [view the OAuth credential](https://dev.frontapp.com/docs/create-and-manage-apps#obtain-oauth-credentials-for-your-app) from Front:
+* `frontId` - The OAuth ID of your channel type.
+* `frontSecret` - The OAuth secret key of your channel type given to you during partner channel registration.
 * `callbackHostname` - The hostname that this channel will use when generating webhooks. If running the server locally,
 we recommend using a tool like [ngrok](https://ngrok.com/) to proxy requests to localhost. This variable should be the public URL of your `ngrok` proxy.
 
