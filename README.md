@@ -1,8 +1,8 @@
 # front-channel-template
-A simple, runnable reference channel for working with Front's [Partner Channel API](https://dev.frontapp.com/reference/channel-api).
+A simple, runnable reference channel for working with Front's [Application Channel API](https://dev.frontapp.com/reference/channel-api).
 
 ## Disclaimer
-This channel is a low-complexity reference implementation for integrating with Front's Partner Channel API.
+This channel is a low-complexity reference implementation for integrating with Front's Application Channel API.
 The code provided here does not reflect production-quality code nor should it be used as such.
 Instead, this is a standalone and runnable server for understanding how to build a channel with Front's API.
 
@@ -38,7 +38,7 @@ Once you have the development server running alongside the host that generates w
 
 ## Reading through the code
 
-This channel is written for the sake of learning and understanding Front's Partner Channel API.
+This channel is written for the sake of learning and understanding Front's Application Channel API.
 It is written using [TypeScript](https://www.typescriptlang.org/), [Node](https://nodejs.org/en/), with
 routes provided by [ExpressJs](https://expressjs.com/).
 While it is not necessary to be an expert in these technologies to understand the code, you may find it useful to briefly
@@ -58,4 +58,4 @@ from Front are prefixed with `/front`. Each route declaration contains a detaile
 This file contains utility functions for making requests to Front's API from your channel.
 
 ### Further reading
-Refer to our [in-depth tutorial](https://dev.frontapp.com/docs/getting-started-with-partner-channels) for a detailed walkthrough of this project and how you can use it to facilitate the development of a Front partner channel integration.
+Refer to our [in-depth tutorial](https://dev.frontapp.com/docs/getting-started-with-partner-channels) for a detailed walkthrough of this project and how you can use it to facilitate the development of a Front application channel integration.
