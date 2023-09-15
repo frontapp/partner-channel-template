@@ -3,11 +3,11 @@ import ChannelRouter from './routes';
 import { randomBytes } from 'crypto';
 import bodyParser from 'body-parser';
 
-export const frontId = 'yourFrontId';
 export const frontSecret = 'shhhhhhhhh';
 export const frontUrl = 'https://api2.frontapp.com/';
 export const callbackHostname = 'https://your-ngrok-hostnmae.ngrok.io';
 export const serverPort = '3000';
+export const frontAppUid = "yourFrontAppUid";
 
 export function randomString(length: number): string {
   return randomBytes(Math.floor(length / 2)).toString('hex');

@@ -1,7 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 import * as moment from 'moment';
-import { frontId, frontSecret, frontUrl, randomString } from './server';
 import needle from 'needle';
+import { frontAppUid, frontSecret, frontUrl, randomString } from "./server";
 
 export interface FrontSender {
     name?: string;
@@ -76,11 +76,18 @@ export class FrontConnector {
     };
   }
 
+  /**
+   * Builds a JWT auth token for the given channel ID, for your application
+   * See Authenticating Requests to Front docs for details:
+   *   https://dev.frontapp.com/docs/creating-a-partner-channel#authenticating-requests-to-front
+   * @param channelId (cha_123)
+   * @returns Signed JWT
+   */
   static buildToken(channelId: string) {
     const signature = frontSecret;
     const exp = moment.utc(Date.now()).add('10', 'seconds').unix();
     const payload = {
-      iss: frontId,
+      iss: frontAppUid,
       jti: randomString(8),
       sub: channelId,
       exp
