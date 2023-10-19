@@ -3,9 +3,9 @@ import ChannelRouter from './routes';
 import { randomBytes } from 'crypto';
 import bodyParser from 'body-parser';
 
-export const frontId = 'yourFrontId';
+export const frontId = 'yourFrontAppUID'; // The App UID of your Front app
 export const frontSecret = 'shhhhhhhhh';
-export const frontUrl = 'https://api2.frontapp.com/';
+export const frontUrl = 'https://api2.frontapp.com'; // This URL subdomain might be different for your company
 export const callbackHostname = 'https://your-ngrok-hostnmae.ngrok.io';
 export const serverPort = '3000';
 
