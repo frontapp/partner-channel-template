@@ -10,7 +10,7 @@ const ChannelRouter = Router();
 ChannelRouter.use('/front', verifyFrontRequest);
 
 /**
- * This route is called when a user in Front creates a new instance of this channel type.
+ * This route is called when a user in Front creates a new instance of this application channel.
  * We are expected to respond with a type of 'success' as well as a webhook URL that tells
  * Front where to send message sync updates about this channel.
  * 
