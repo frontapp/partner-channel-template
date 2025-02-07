@@ -20,7 +20,7 @@ yarn install
 ### Step 2: Configuration
 
 Your channel can be configured by editing the necessary variables in `server.ts`.
-You obtain the following values when you [create an application channel for an app](https://dev.frontapp.com/docs/create-and-manage-apps#create-a-channel-type) and then [view the OAuth credentials](https://dev.frontapp.com/docs/create-and-manage-apps#obtain-oauth-credentials-for-your-app) from Front:
+You obtain the following values when you [create an application channel for an app](https://dev.frontapp.com/docs/create-and-manage-apps#create-an-app-channel) and then [view the OAuth credentials](https://dev.frontapp.com/docs/create-and-manage-apps#obtain-oauth-credentials-for-your-app) from Front:
 * `frontId` - The App UID of the app that contains your app channel feature, as defined in the **Basic information** tab. Learn more about apps on our [Developer Portal](https://dev.frontapp.com/docs/create-and-manage-apps).
 * `frontSecret` - The secret key of the app that contains your app channel feature, as defined in the **Basic information** tab.
 * `callbackHostname` - The hostname that this channel will use when generating webhooks. If running the server locally,
