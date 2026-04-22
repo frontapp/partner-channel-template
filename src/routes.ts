@@ -17,6 +17,22 @@ ChannelRouter.use('/front', verifyFrontRequest);
  * In this implementation, we respond with /front/${randomString(16)}.
  */
 ChannelRouter.post('/', async (req: Request, res: Response) => {
+  if (req.body.type === 'list_addresses') {
+    res.status(200).json({
+      type: 'success',
+      addresses: [
+        {
+          address: '+15551234',
+          name: 'Support'
+        }
+      ],
+      // Optional if you have more addresses to list
+      pagination: {
+        next_page_token: randomString(16)
+      }
+    })
+  }
+  
   if (req.body.type !== 'authorization') {
     res.send(400).json({ type: 'bad_request', message: 'Unknown type sent to channel' });
   }
@@ -109,6 +125,28 @@ ChannelRouter.get('/oauth/authorize', async (req: Request, res: Response) => {
 ChannelRouter.post('/oauth/token', async (req: Request, res: Response) => {
   console.log('Returning access token to Front');
   return res.status(200).json({ access_token: randomString(32), refresh_token: randomString(32) });
+});
+
+/**
+ * The following route handles token introspection for channel identification. If you are using private credentials,
+ * you supply front_channel_name and front_channel_address. If you are using shared credentials, you supply
+ * resource_owner_id and resource_owner_name. Both credential types support sending the active boolean.
+ * 
+ * To learn more, refer to https://dev.frontapp.com/docs/token-instrospection-for-channel-identification
+ */
+ChannelRouter.post('/oauth/token/introspect', async (req: Request, res: Response) => {
+  console.log('Returning identity of the token to Front');
+  return res.status(200).json({
+    active: true,
+    /* Private credentials
+    front_channel_name: 'App Channel, Inc.',
+    front_channel_address: randomString(16)
+    /* End private credentials
+    /* Shared credentials */
+    resource_owner_id: randomString(16),
+    resource_owner_name: 'App Channel, Inc.'
+    /* End shared credentials */
+  });
 });
 
 // HELPER FUNCTIONS
